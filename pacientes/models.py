@@ -9,7 +9,7 @@ class PacientesModel (models.Model):
     nombre_paciente=models.CharField(max_length=250, blank=True, null=True, verbose_name='Nombre del paciente')
     apellido_paciente=models.CharField(max_length=250, blank=True, null=True, verbose_name='Apellidos del paciente')
     edad=models.IntegerField(max_length=250, blank=True, null=True, verbose_name='Edad')
-    identificacion=models.IntegerField(max_length=250, blank=True, null=True, verbose_name='Identificacion')
+    # identificacion=models.IntegerField(max_length=250, blank=True, null=True, verbose_name='Identificacion')
     departamento=models.ForeignKey(Departamento, on_delete=models.SET_NULL, blank=True, null=True, verbose_name='Departamento')
     municipio=models.ForeignKey(Municipio, on_delete=models.SET_NULL, blank=True, null=True, verbose_name='Municipio')
     documento=models.ForeignKey(TipoDocumento, on_delete=models.SET_NULL, blank=True, null=True, verbose_name='Tipo de Documento')

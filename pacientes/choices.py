@@ -13,10 +13,10 @@ CLASIFICACION=(
 )
 
 CONDUCTA_CHOICES = [
-    (0, 'No aplica'),
-    (1, 'Ambulatoria'),
-    (2, 'Hospitalización piso'),
-    (3, 'Unidad de cuidados intensivos'),
-    (4, 'Observación'),
-    (5, 'Remisión para hospitalización'),
+    ('0', 'No aplica'),
+    ('1', 'Ambulatoria'),
+    ('2', 'Hospitalización piso'),
+    ('3', 'Unidad de cuidados intensivos'),
+    ('4', 'Observación'),
+    ('5', 'Remisión para hospitalización'),
 ]
