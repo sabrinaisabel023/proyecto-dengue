@@ -61,6 +61,7 @@ def dataPaciente(request):
                 'estado_paciente': paciente.estado_paciente,
                 'estrato': paciente.estrato,
                 'edad': paciente.edad,
+                'nombre_municipio':paciente.municipio.nombre_municipio if paciente.municipio else None,
                 'latitud': paciente.municipio.latitud if paciente.municipio else None,
                 'longitud': paciente.municipio.longitud if paciente.municipio else None,
             }

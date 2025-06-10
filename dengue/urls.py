@@ -25,5 +25,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('consumo-api/',consumoApi),
     path('departamentos/', views.getDepartamentos, name='get_departamentos'),
+    path('municipios/<int:id_dep>/', views.getMunicipios, name='get_municipios'),
     path('data-paciente/', dataPaciente, name='data_paciente'),
 ]
