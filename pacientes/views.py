@@ -41,3 +41,31 @@ def consumoApi(request):
         return JsonResponse(data={'status':200})
     except Exception as e:
         return JsonResponse(data={'error':str(e)})
+
+def dataPaciente(request):
+    try:
+        dep = request.GET.get('dep', None)
+        ob_paciente = PacientesModel.objects.all()
+        if dep is not None:
+            ob_paciente = ob_paciente.filter(departamento=dep)
+
+        data = []
+        for paciente in ob_paciente:
+            paciente_dict = {
+                'id': paciente.id,
+                'departamento': paciente.departamento.id if paciente.departamento else None,
+                'municipio': paciente.municipio.id if paciente.municipio else None,
+                'sexo': paciente.sexo,
+                'fecha_notificacion': paciente.fecha_notificacion,
+                'clasificacion': paciente.clasificacion,
+                'estado_paciente': paciente.estado_paciente,
+                'estrato': paciente.estrato,
+                'edad': paciente.edad,
+                'latitud': paciente.municipio.latitud if paciente.municipio else None,
+                'longitud': paciente.municipio.longitud if paciente.municipio else None,
+            }
+            data.append(paciente_dict)
+
+        return JsonResponse(data=data, safe=False)
+    except Exception as e:
+        return JsonResponse(data={'error': str(e)})

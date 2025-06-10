@@ -16,9 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from pacientes.views import consumoApi
+from pacientes.views import consumoApi, dataPaciente
+from configuracion.views import redirect_
+from configuracion import views
 
 urlpatterns = [
+    path('', redirect_, name='redirect'),
     path('admin/', admin.site.urls),
     path('consumo-api/',consumoApi),
+    path('departamentos/', views.getDepartamentos, name='get_departamentos'),
+    path('data-paciente/', dataPaciente, name='data_paciente'),
 ]

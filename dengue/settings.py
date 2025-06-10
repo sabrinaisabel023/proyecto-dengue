@@ -59,7 +59,7 @@ ROOT_URLCONF = 'dengue.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -72,6 +72,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'dengue.wsgi.application'
+
+LOGIN_REDIRECT= 'admin:index'
 
 
 # Database
